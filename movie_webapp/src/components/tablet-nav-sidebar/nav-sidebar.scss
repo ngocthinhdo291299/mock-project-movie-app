@@ -1,0 +1,62 @@
+@use '../../scss/' as *;
+.header-sidebar-mobile{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    min-width: 250px;
+    height: 100vh;
+    background-color: $background-web;
+    color: $white;
+    list-style-type: none;
+    padding: 15px 20px;
+    transition: transform 200ms linear;
+    @include mobile{
+        min-width: 180px;
+    }
+    .btn-close{
+        display: block;
+        text-align: right;
+        width: 100%;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+    .header-sidebar-link{
+     &>*{
+         margin-bottom: 20px;
+     }
+    }
+   
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: $overlay;
+    z-index: 999;
+    mix-blend-mode: multiply;
+    transition: opacity 100ms linear;
+}
+.logged-user{
+    cursor: pointer;
+    .user-infor{
+        @include flex(center,null);
+        &>span{
+            margin-left: 10px;
+            font-size: 0.9rem;
+        }
+       
+    }
+    .sidebar-sign-out{
+        background-color: $white;
+        padding: 6px 0;
+        color: black;
+        margin-top: 10px;
+        text-align: center;
+        width: 100%;
+        top: -10px; 
+    transition: transform 150ms linear;
+    }
+}

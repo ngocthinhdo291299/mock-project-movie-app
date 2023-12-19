@@ -1,0 +1,179 @@
+@use "../../scss/" as *;
+
+.poster-cart {
+  position: relative;
+  .remove {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: $red;
+    border: 1px solid $red;
+    border-radius: 50%;
+    background-color: $white;
+    @include flex(center, center);
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+.poster-link {
+  position: relative;
+  max-width: 100%;
+  .poster-title {
+    color: $white;
+  }
+  .poster-title-english {
+    font-size: 0.875rem;
+    color: $grey;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 300;
+  }
+
+  .poster-title-vietnamese {
+    margin-top: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 0.9rem;
+    color: $white;
+  }
+}
+
+.poster-image {
+  transform: scale(1);
+  transition: transform 150ms linear, opacity 1s linear;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  object-fit: cover;
+  background-size: cover;
+  background-position: top;
+}
+
+.image-container:hover .poster-image {
+  transform: scale(1.2);
+}
+.image-container {
+  overflow: hidden;
+  position: relative;
+  padding-top: 150%;
+}
+.grid {
+  padding-top: 150%;
+}
+
+.image-container.home-sidebar {
+  display: flex;
+  flex-direction: column;
+  padding-top: 45%;
+  position: relative;
+}
+.poster-image.home-sidebar {
+  position: absolute;
+  top: 0;
+}
+.image-container.watch-sidebar {
+  display: flex;
+  flex-direction: column;
+  padding-top: 45%;
+  position: relative;
+}
+.poster-image.watch-sidebar {
+  position: absolute;
+  top: 0;
+}
+.home-sidebar {
+  color: $white;
+}
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  @include flex(center, center);
+  color: white;
+  font-size: 3rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    mix-blend-mode: multiply;
+    background-color: rgb(187, 187, 187);
+    cursor: pointer;
+  }
+  opacity: 0;
+  &:hover {
+    opacity: 1;
+  }
+  @include mobile {
+    &:hover {
+      opacity: 0;
+    }
+  }
+}
+
+.rank {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  right: -20px;
+  top: -20px;
+  border-radius: 50%;
+  background-color: $red;
+  &-number {
+    color: $white;
+    position: absolute;
+    bottom: 3px;
+    left: 13px;
+  }
+}
+.vote {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: $white;
+  @include flex(center, center);
+  .star {
+    color: $yellow;
+    position: absolute;
+    left: -15px;
+    top: 2.8px;
+  }
+  .score {
+    // color:$yellow;
+    font-weight: 500;
+  }
+}
+
+.sidebar-title {
+  position: absolute;
+  top: 70%;
+  left: 3%;
+  font-weight: 500;
+  font-size: 0.85rem;
+  font-family: $font-secondary;
+  @include large-desktop {
+    font-size: 0.9rem;
+  }
+  color: $grey;
+}
+.sidebar-title-english {
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  font-weight: 600;
+  font-family: $font-secondary;
+  @include large-desktop {
+    font-size: 0.9rem;
+  }
+}

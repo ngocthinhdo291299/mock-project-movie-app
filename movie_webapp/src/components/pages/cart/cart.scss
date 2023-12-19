@@ -1,0 +1,91 @@
+@use "../../../scss/" as *;
+.cart{
+  min-height: calc(100vh - 116px);
+}
+.cart-noti {
+  color: $white;
+  display: flex;
+  @include flex(center, center);
+  flex-direction: column;
+  justify-self: center;
+  min-height: calc(100vh - 116px);
+  font-size: 200px;
+
+  .noti {
+    font-size: 30px;
+  }
+}
+.catalog {
+  color: $white;
+  .pagination-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    h4 {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+    .btnMoveToPage {
+      background-color: transparent;
+      color: white;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border: 1px solid white;
+      border-radius: 0.25rem;
+      &:hover {
+        background-color: $red;
+        border-color: transparent;
+        cursor: pointer;
+      }
+    }
+  }
+  .pagination {
+    color: $white;
+    margin-top: 30px;
+    gap: 5;
+    @include flex(center, center);  
+    .page-cart {
+      cursor: pointer;
+    }
+    .pre-page {
+      padding: 10px;
+    }
+    .next-page {
+      padding: 10px;
+    }
+    .active {
+      background-color: $red;
+    }
+    .checkout {
+      background-color: $red;
+      color: $white;
+      padding: 0 1.25rem;
+      height: 45px;
+      font-family: "Quicksand", sans-serif;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+    }
+    &-number {
+      @include flex(center, center);
+      & > * {
+        @include flex(center, center);
+        margin-right: 10px;
+        width: 45px;
+        height: 45px;
+        @include tablet {
+          width: 35px;
+          height: 35px;
+        }
+        @include mobile {
+          width: 30px;
+          height: 30px;
+          // font-size: 1rem;
+        }
+      }
+    }
+  }
+}
